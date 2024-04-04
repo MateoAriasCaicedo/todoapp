@@ -1,10 +1,9 @@
 package com.codecrafters.todoapp.students;
 
-import org.bson.Document;
-import org.bson.types.ObjectId;
-
 import java.time.LocalDateTime;
 import java.util.List;
+import org.bson.Document;
+import org.bson.types.ObjectId;
 
 public record TaskCreationDTO(
     String title,
@@ -24,7 +23,7 @@ public record TaskCreationDTO(
         task.tags());
   }
 
-  public Document asDocument() {
+  public Document asMongoDocument() {
     return new Document()
         .append("title", title)
         .append("description", description)

@@ -1,5 +1,6 @@
-package com.codecrafters.todoapp.config.db;
+package com.codecrafters.todoapp.db.config;
 
+import com.codecrafters.todoapp.db.DBCredentials;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import org.springframework.context.annotation.Bean;

@@ -1,10 +1,9 @@
 package com.codecrafters.todoapp.students;
 
-import org.bson.Document;
-import org.bson.types.ObjectId;
-
 import java.time.LocalDateTime;
 import java.util.List;
+import org.bson.Document;
+import org.bson.types.ObjectId;
 
 public record Task(
     ObjectId id,
@@ -15,16 +14,7 @@ public record Task(
     Boolean completed,
     List<String> tags) {
 
-  public static Task fromDocument(Document document) {
-    return new Task(
-        document.getObjectId("_id"),
-        document.get("title", String.class),
-        document.get("description", String.class),
-        document.get("dueDate", LocalDateTime.class),
-        document.get("category", String.class),
-        document.get("completed", Boolean.class),
-        document.get("tags", List.class));
-  }
+
 
   public Document asDocument() {
     return new Document()
